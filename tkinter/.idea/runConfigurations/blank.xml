@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="blank" type="PythonConfigurationType" factoryName="Python" activateToolWindowBeforeRun="false" show_console_on_std_out="true" show_console_on_std_err="true">
+    <log_file path="$PROJECT_DIR$/Logs" checked="true" skipped="false" show_all="true" alias="Logs1" />
+    <output_file path="$PROJECT_DIR$/Logs/coLog.txt" is_save="true" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <envs>
+      <env name="PYTHONUNBUFFERED" value="1" />
+    </envs>
+    <option name="SDK_HOME" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="IS_MODULE_SDK" value="true" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <module name="tkinter" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/blank.py" />
+    <option name="PARAMETERS" value="" />
+    <option name="SHOW_COMMAND_LINE" value="false" />
+    <option name="EMULATE_TERMINAL" value="true" />
+    <option name="MODULE_MODE" value="false" />
+    <method />
+  </configuration>
+</component>

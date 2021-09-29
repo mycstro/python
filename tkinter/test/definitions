@@ -1,0 +1,59 @@
+
+
+def paint( event ):
+   python_green = "#476042"
+   x1, y1 = ( event.x - 1 ), ( event.y - 1 )
+   x2, y2 = ( event.x + 1 ), ( event.y + 1 )
+   c.create_oval( x1, y1, x2, y2, fill = python_green )
+
+def checkered(canvas, line_distance):
+   # vertical lines at an interval of "line_distance" pixel
+   for x in range(line_distance,cWidth,line_distance):
+      canvas.create_line(x, 0, x, cHeight, fill="#476042")
+   # horizontal lines at an interval of "line_distance" pixel
+   for y in range(line_distance,cHeight,line_distance):
+      canvas.create_line(0, y, cWidth, y, fill="#476042")
+
+def monthly_payment(entries):
+   # period rate:
+   r = (float(entries['Annual Rate'].get()) / 100) / 12
+   print("r", r)
+   # principal loan:
+   loan = float(entries['Loan Principle'].get())
+   n =  float(entries['Number of Payments'].get())
+   remaining_loan = float(entries['Remaining Loan'].get())
+   q = (1 + r)** n
+   monthly = r * ( (q * loan - remaining_loan) / ( q - 1 ))
+   monthly = ("%8.2f" % monthly).strip()
+   entries['Monthly Payment'].delete(0,END)
+   entries['Monthly Payment'].insert(0, monthly )
+   print("Monthly Payment: %f" % float(monthly))
+
+def final_balance(entries):
+   # period rate:
+   r = (float(entries['Annual Rate'].get()) / 100) / 12
+   print("r", r)
+   # principal loan:
+   loan = float(entries['Loan Principle'].get())
+   n =  float(entries['Number of Payments'].get())
+   q = (1 + r)** n
+   monthly = float(entries['Monthly Payment'].get())
+   q = (1 + r)** n
+   remaining = q * loan  - ( (q - 1) / r) * monthly
+   remaining = ("%8.2f" % remaining).strip()
+   entries['Remaining Loan'].delete(0,END)
+   entries['Remaining Loan'].insert(0, remaining )
+   print("Remaining Loan: %f" % float(remaining))
+
+def makeform(root, fields):
+   entries = {}
+   for field in fields:
+      row = Frame(root)
+      lab = Label(row, width=22, text=field+": ", anchor='w')
+      ent = Entry(row)
+      ent.insert(0,"0")
+      row.pack(side=TOP, fill=X, padx=5, pady=5)
+      lab.pack(side=LEFT)
+      ent.pack(side=RIGHT, expand=YES, fill=X)
+      entries[field] = ent
+   return entries

@@ -1,0 +1,19 @@
+import imp, os.path, sys
+
+def import_(filename, prefix):
+    path, name = os.path.split(filename)
+    name, ext = os.path.splitext(name)
+
+    modname = "%s_%s" % (prefix, name)
+
+    print('Before: %s in sys.modules ==' % modname, modname in sys.modules)
+    print('Before: %s in sys.modules ==' % name, name in sys.modules)
+    file, filename, data = imp.find_module(name, [path])
+    mod = imp.load_module(name, file, filename, data)
+    print('After: %s in sys.modules ==' % modname, modname in sys.modules)
+    print('After: %s in sys.modules ==' % name, name in sys.modules)
+    return mod
+
+if __name__ == '__main__':
+    rePath = imp.find_module('re')[1]
+    import_ (rePath, "example")

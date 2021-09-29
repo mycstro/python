@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../GitHub">
+      <excludeFolder url="file://$MODULE_DIR$/../../GitHub" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../Page" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/miloSystems" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/miloSystems/dbMySql" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/miloSystems/progress" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/miloSystems/timin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/intro" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/menyou" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/intro/agin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/intro/datin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/intro/pii" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.7 (milo)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,29 @@
+import sys, os, importlib, inspect, locale, time, re, inspect, datetime
+from datetime import datetime
+
+locale.setlocale(locale.LC_ALL, '')  # Set the locale for your system 'en_US.UTF-8'
+
+
+# Main #
+def main():
+    # Main Code
+    # Print the time it is last run
+    lastrun = 'Tue Mar  3 03:17:46 2015'
+    print("This program was last run at: <<%s>>.") % (lastrun)
+    # Read in the source code of itself
+    srcfile = inspect.getsourcefile(
+        sys.modules[__name__])  ## Gets module name and path then extracts and stores file name and path.
+    print("DEBUG srcfile: %s") % (srcfile)  # DEBUG
+    f = open(srcfile, 'r')  ## Open connections to source file in "r" mode and stores connection in "f".
+    src = f.read()  ## Reads source file code into "src" variable.
+    f.close()  ## Closes file connection.
+    # modify the embedded timestamp
+    timestamp = datetime.ctime(datetime.now())
+    match = re.search("lastrun = '(.*)'", src)
+    if match:
+        src = src[:match.start(1)] + timestamp + src[match.end(1):]
+    print("Here")
+    # write the source code back
+    f = open(srcfile, 'w')
+    f.write(src)
+    f.close()
